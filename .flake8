@@ -1,0 +1,9 @@
+[flake8]
+max_line_length = 79
+max_complexity = 10
+extend_ignore = F405,E731,F403,N805,C901,W504
+extend_exclude =
+    database/alembic/versions/*.py,
+    venv,
+    __pycache__
+    temp
