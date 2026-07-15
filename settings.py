@@ -9,7 +9,7 @@ class S3Settings(BaseSettings):
 
     model_config = SettingsConfigDict(
         env_prefix="S3_",
-        env_file=".env",
+        env_file=".env.example",
         extra="ignore"
     )
 
@@ -18,7 +18,7 @@ class AppSettings(BaseSettings):
     debug: bool = True
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=".env.example",
         extra="ignore"
     )
 
