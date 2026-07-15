@@ -14,7 +14,7 @@ async def lifespan(app_: FastAPI):
     pass
 
 app = FastAPI(
-    title="Sber Case1 API",
+    title="SberSFCase1 API",
     lifespan=lifespan
 )
 
