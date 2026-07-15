@@ -34,6 +34,27 @@ services:
     volumes:
       - ../../:/app
 
+  migrations:
+    depends_on:
+      - db
+    build:
+      context: ../../
+      dockerfile: contrib/docker/app_api/Dockerfile
+    command: "alembic -c database/migrations/alembic.ini upgrade head"
+    env_file: ../../.env
+    volumes:
+      - ../../:/app
+
+  tests:
+    build:
+      context: ../../
+      dockerfile: contrib/docker/app_api/Dockerfile
+    command: "pytest tests/ -v"
+    env_file: ../../.env
+    volumes:
+      - ../../:/app
+
+
 volumes:
   pg_data:
   minio_storage:
